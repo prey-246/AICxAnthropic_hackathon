@@ -61,6 +61,13 @@ def call_claude(prompt: str, system: str = "") -> str:
 def root():
     return {"status": "OpportunityOS backend running"}
 
+@app.get("/health")
+def health():
+    return {
+        "status": "ok",
+        "supabase": "connected",
+        "anthropic_key": bool(os.getenv("ANTHROPIC_API_KEY"))
+    }
 
 @app.post("/extract-profile")
 async def extract_profile(
@@ -86,6 +93,17 @@ async def extract_profile(
 
     result = call_claude(prompt)
     profile = json.loads(result)
+    supabase.table("users").insert({
+        "name": name,
+        "college": college,
+        "cgpa": cgpa,
+        "field": field,
+        "financial_background": financial_background,
+        "skills": profile.get("skills", []),
+        "achievements": profile.get("achievements", []),
+        "experience": profile.get("experience", []),
+        "resume_text": resume_text
+    }).execute()
     profile["resume_text"] = resume_text
     return profile
 
@@ -197,3 +215,4 @@ def update_tracker(update: TrackerUpdate):
 def get_tracker(user_id: str):
     result = supabase.table("applications").select("*").eq("user_id", user_id).execute()
     return result.data
+
