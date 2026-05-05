@@ -130,7 +130,7 @@ export default function Workspace() {
     setTabError("");
     setDraftText("");
     try {
-      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/draft`, {
+      const response = await fetch(`${client.defaults.baseURL}/draft`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
