@@ -1,0 +1,36 @@
+.filter-bar {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.opportunity-card .badge.type {
+  margin-bottom: 0.5rem;
+}
+
+.badge.type.scholarship {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.badge.type.internship {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge.type.fellowship {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+@media (max-width: 768px) {
+  .opportunity-grid {
+    grid-template-columns: 1fr;
+  }
+}
