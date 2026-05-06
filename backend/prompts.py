@@ -76,7 +76,7 @@ Return ONLY a valid JSON object:
         {{
             "area": "",
             "description": "",
-            "severity": "blocker | weak | strong",
+            "severity": "blocker | weak | asset",
             "benchmark": "",
             "user_status": ""
         }}
@@ -103,7 +103,12 @@ Student profile:
 Opportunity (includes deadline):
 {opportunity}
 
-Generate a realistic week by week action plan. Be specific — name actual organisations, actual resources, actual steps.
+Identified gaps to address:
+{gaps}
+
+Today's date: {current_date}
+
+Generate a realistic week by week action plan targeting the identified gaps. Be specific — name actual organisations, actual resources, actual steps.
 
 Return ONLY a valid JSON object:
 {{

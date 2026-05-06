@@ -1,1 +1,677 @@
-﻿[]
+[
+  {
+    "id": "tata-scholarship-2026",
+    "name": "Tata Scholarship",
+    "type": "scholarship",
+    "provider": "Tata Trusts",
+    "description": "One of India's most prestigious need-based scholarships for undergraduate students. Covers tuition, living expenses, and a personal development allowance. Aimed at academically strong students from financially disadvantaged backgrounds.",
+    "eligibility": {
+      "min_cgpa": 8.5,
+      "income_limit": "4LPA",
+      "year": "1st or 2nd year UG",
+      "fields": ["any"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-10-31",
+    "award": "Up to INR 3,00,000/year covering tuition and living expenses",
+    "requirements": ["SOP", "recommendation letter", "income proof", "marksheets", "admission letter"],
+    "benchmarks": {
+      "typical_cgpa": 9.1,
+      "leadership_roles": 2,
+      "community_service": true,
+      "research_experience": false,
+      "financial_threshold": "family income under 4LPA",
+      "essay_word_count": 500,
+      "source": "Tata Scholars 2023 cohort report"
+    },
+    "tags": ["need-based", "merit", "first-gen", "prestigious", "government"]
+  },
+  {
+    "id": "aditya-birla-scholarship-2026",
+    "name": "Aditya Birla Scholarship",
+    "type": "scholarship",
+    "provider": "Aditya Birla Group",
+    "description": "Highly competitive merit-based scholarship for students at top institutes including IITs, IIMs, BITS, and select law/liberal arts colleges. Covers tuition and a monthly stipend. Awarded based on academic excellence and personal interview.",
+    "eligibility": {
+      "min_cgpa": 9.0,
+      "income_limit": null,
+      "year": "1st year UG at eligible institute",
+      "fields": ["Engineering", "Management", "Law", "Liberal Arts"],
+      "nationality": "Indian",
+      "eligible_institutes": ["IITs", "IIMs", "BITS Pilani", "XLRI", "NLU Delhi"]
+    },
+    "deadline": "2026-09-30",
+    "award": "INR 65,000/year + personal mentorship",
+    "requirements": ["application form", "marksheets", "SOP", "personal interview"],
+    "benchmarks": {
+      "typical_cgpa": 9.5,
+      "leadership_roles": 3,
+      "community_service": true,
+      "research_experience": true,
+      "essay_word_count": 600,
+      "source": "Aditya Birla Scholars 2023 selection report"
+    },
+    "tags": ["merit", "prestigious", "stem", "management", "top-institutes"]
+  },
+  {
+    "id": "kvpy-fellowship-2026",
+    "name": "KVPY Fellowship (Kishore Vaigyanik Protsahan Yojana)",
+    "type": "fellowship",
+    "provider": "Department of Science and Technology (DST) / IISc",
+    "description": "National fellowship program to encourage students with aptitude for research in basic sciences. Provides a monthly fellowship and summer research exposure at top science institutions. Requires clearing a national aptitude test.",
+    "eligibility": {
+      "min_cgpa": 8.0,
+      "income_limit": null,
+      "year": "1st year BSc/BS/B.Stat/B.Math or 11th/12th grade",
+      "fields": ["Physics", "Chemistry", "Mathematics", "Biology", "Interdisciplinary Sciences"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-08-31",
+    "award": "INR 5,000-7,000/month + annual contingency grant",
+    "requirements": ["KVPY aptitude test", "interview", "12th marksheets", "enrollment proof"],
+    "benchmarks": {
+      "typical_cgpa": 9.0,
+      "science_olympiad": true,
+      "research_experience": false,
+      "typical_aptitude_percentile": 95,
+      "source": "KVPY official statistics 2022-23"
+    },
+    "tags": ["research", "science", "fellowship", "government", "stem", "merit"]
+  },
+  {
+    "id": "aga-khan-scholarship-2026",
+    "name": "Aga Khan Foundation International Scholarship",
+    "type": "scholarship",
+    "provider": "Aga Khan Foundation",
+    "description": "Provides support to outstanding students from developing countries for postgraduate study abroad. Based on a 50% grant and 50% loan basis. Highly competitive and focused on students who show commitment to giving back to their communities.",
+    "eligibility": {
+      "min_cgpa": 8.0,
+      "income_limit": "6LPA",
+      "year": "Postgraduate (Master's)",
+      "fields": ["any"],
+      "nationality": "Indian (and other developing countries)"
+    },
+    "deadline": "2026-03-31",
+    "award": "Full tuition + living allowance (50% grant, 50% loan)",
+    "requirements": ["SOP", "2 recommendation letters", "income proof", "university acceptance letter", "CV"],
+    "benchmarks": {
+      "typical_cgpa": 8.8,
+      "community_service": true,
+      "leadership_roles": 2,
+      "research_experience": true,
+      "source": "Aga Khan Foundation scholarship guidelines"
+    },
+    "tags": ["need-based", "postgraduate", "international", "community-service", "first-gen"]
+  },
+  {
+    "id": "inlaks-scholarship-2026",
+    "name": "Inlaks Shivdasani Foundation Scholarship",
+    "type": "scholarship",
+    "provider": "Inlaks Shivdasani Foundation",
+    "description": "One of India's most competitive scholarships for postgraduate study at top universities abroad (US, UK, Europe). Covers full tuition, living, and travel costs. Extremely selective — fewer than 20 awards per year across all fields.",
+    "eligibility": {
+      "min_cgpa": 8.5,
+      "income_limit": null,
+      "year": "Postgraduate — must have completed UG from Indian institution",
+      "fields": ["any"],
+      "nationality": "Indian",
+      "age_limit": "30 years"
+    },
+    "deadline": "2026-02-28",
+    "award": "Up to USD 100,000 covering tuition, living, and travel",
+    "requirements": ["SOP", "3 recommendation letters", "UG transcripts", "university acceptance", "CV", "personal interview"],
+    "benchmarks": {
+      "typical_cgpa": 9.2,
+      "leadership_roles": 3,
+      "research_publications": 1,
+      "community_service": true,
+      "source": "Inlaks Foundation annual report 2023"
+    },
+    "tags": ["merit", "international", "postgraduate", "prestigious", "stem", "arts"]
+  },
+  {
+    "id": "reliance-foundation-scholarship-2026",
+    "name": "Reliance Foundation Scholarship",
+    "type": "scholarship",
+    "provider": "Reliance Foundation",
+    "description": "Broad-based scholarship program supporting undergraduate students from underprivileged backgrounds across STEM and humanities. Covers tuition fees and provides mentorship and networking opportunities with Reliance professionals.",
+    "eligibility": {
+      "min_cgpa": 6.0,
+      "income_limit": "2.5LPA",
+      "year": "1st year UG",
+      "fields": ["Engineering", "Science", "Commerce", "Arts", "Humanities"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-11-30",
+    "award": "Up to INR 2,00,000/year",
+    "requirements": ["application form", "income proof", "marksheets", "SOP"],
+    "benchmarks": {
+      "typical_cgpa": 7.5,
+      "financial_threshold": "family income under 2.5LPA",
+      "leadership_roles": 1,
+      "community_service": false,
+      "source": "Reliance Foundation scholarship portal 2023"
+    },
+    "tags": ["need-based", "first-gen", "broad-eligibility", "stem", "arts", "humanities"]
+  },
+  {
+    "id": "pm-scholarship-scheme-2026",
+    "name": "Prime Minister's Scholarship Scheme",
+    "type": "scholarship",
+    "provider": "Government of India — Ministry of Home Affairs",
+    "description": "Government scholarship exclusively for dependent wards and widows of ex-servicemen and ex-Coast Guard personnel. Provides financial support for professional degree programs including engineering, medicine, MBA, and MCA.",
+    "eligibility": {
+      "min_cgpa": 6.0,
+      "income_limit": null,
+      "year": "1st year of professional degree program",
+      "fields": ["Engineering", "Medicine", "MBA", "MCA", "BCA", "B.Pharma"],
+      "nationality": "Indian",
+      "special_requirement": "Ward/widow of ex-serviceman or ex-Coast Guard personnel"
+    },
+    "deadline": "2026-10-15",
+    "award": "INR 2,500-3,000/month for duration of course",
+    "requirements": ["ex-serviceman certificate", "dependency certificate", "admission proof", "marksheets", "bank details"],
+    "benchmarks": {
+      "typical_cgpa": 7.0,
+      "source": "PM Scholarship Scheme official guidelines"
+    },
+    "tags": ["government", "need-based", "defence-families", "professional-degree"]
+  },
+  {
+    "id": "central-sector-scholarship-2026",
+    "name": "Central Sector Scholarship Scheme",
+    "type": "scholarship",
+    "provider": "Ministry of Education, Government of India",
+    "description": "Merit-based scholarship for students in the top 20 percentile of their class 12 board exams, with family income below INR 8 LPA. Covers UG and PG studies at recognized Indian institutions. Renewed annually based on academic performance.",
+    "eligibility": {
+      "min_cgpa": 7.0,
+      "income_limit": "8LPA",
+      "year": "1st year UG",
+      "fields": ["any"],
+      "nationality": "Indian",
+      "board_percentile": "Top 20% in Class 12 board exam"
+    },
+    "deadline": "2026-10-31",
+    "award": "INR 10,000-20,000/year",
+    "requirements": ["class 12 marksheets", "income certificate", "admission proof", "bank details", "Aadhaar"],
+    "benchmarks": {
+      "typical_cgpa": 8.0,
+      "financial_threshold": "family income under 8LPA",
+      "source": "NSP Central Sector Scholarship guidelines"
+    },
+    "tags": ["government", "need-based", "merit", "board-toppers", "first-gen"]
+  },
+  {
+    "id": "inspire-scholarship-dst-2026",
+    "name": "INSPIRE Scholarship (Innovation in Science Pursuit for Inspired Research)",
+    "type": "scholarship",
+    "provider": "Department of Science and Technology (DST), Government of India",
+    "description": "Scholarship for students in the top 1% of their class 12 board exams who enroll in a natural sciences or mathematics program at UG level. Aims to attract talent to basic sciences and research careers. Renewable for 5 years.",
+    "eligibility": {
+      "min_cgpa": 9.0,
+      "income_limit": null,
+      "year": "1st to 5th year BSc/BS/Integrated MSc",
+      "fields": ["Physics", "Chemistry", "Mathematics", "Biology", "Statistics", "Geology", "Astrophysics"],
+      "nationality": "Indian",
+      "board_percentile": "Top 1% in Class 12 board exam"
+    },
+    "deadline": "2026-09-30",
+    "award": "INR 80,000/year + INR 20,000 summer attachment grant",
+    "requirements": ["class 12 marksheets", "enrollment proof in natural sciences", "Aadhaar", "bank details"],
+    "benchmarks": {
+      "typical_cgpa": 9.3,
+      "board_percentile": "Top 0.5%",
+      "research_interest": true,
+      "source": "INSPIRE-SHE official statistics 2022"
+    },
+    "tags": ["government", "merit", "science", "research", "stem", "prestigious"]
+  },
+  {
+    "id": "sitaram-jindal-scholarship-2026",
+    "name": "Sitaram Jindal Foundation Scholarship",
+    "type": "scholarship",
+    "provider": "Sitaram Jindal Foundation",
+    "description": "Need-based scholarship with broad eligibility across UG and PG programs. Provides monthly stipends to students from low-income families. One of the more accessible scholarships — does not require top board scores, focuses on financial need and merit together.",
+    "eligibility": {
+      "min_cgpa": 6.0,
+      "income_limit": "2.5LPA",
+      "year": "Any year of UG or PG",
+      "fields": ["Engineering", "Medical", "Nursing", "Pharmacy", "Management", "Law", "Arts", "Science", "Commerce"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-07-31",
+    "award": "INR 500-2,000/month depending on course and category",
+    "requirements": ["application form", "income certificate", "marksheets", "institution certificate", "bank details"],
+    "benchmarks": {
+      "typical_cgpa": 7.0,
+      "financial_threshold": "family income under 2.5LPA",
+      "source": "Sitaram Jindal Foundation scholarship brochure"
+    },
+    "tags": ["need-based", "first-gen", "broad-eligibility", "accessible", "all-fields"]
+  },
+  {
+    "id": "iitb-srfp-internship-2026",
+    "name": "IIT Bombay Summer Research Fellowship Programme (SRFP)",
+    "type": "internship",
+    "provider": "IIT Bombay",
+    "description": "Competitive summer research internship at IIT Bombay across engineering and science departments. Students work directly with faculty on ongoing research projects. Provides stipend and on-campus accommodation. Strong credential for graduate school applications.",
+    "eligibility": {
+      "min_cgpa": 8.0,
+      "income_limit": null,
+      "year": "2nd or 3rd year UG",
+      "fields": ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Chemical Engineering", "Physics", "Chemistry", "Mathematics"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-02-28",
+    "award": "INR 10,000/month stipend + free accommodation",
+    "duration": "2 months (May-July)",
+    "requirements": ["resume", "SOP", "transcripts", "faculty recommendation letter"],
+    "benchmarks": {
+      "typical_cgpa": 8.7,
+      "research_experience": false,
+      "leadership_roles": 1,
+      "coding_skills": true,
+      "source": "IITB SRFP selection statistics 2023"
+    },
+    "tags": ["research", "stem", "stipend", "iit", "prestigious", "grad-school-prep"]
+  },
+  {
+    "id": "drdo-internship-2026",
+    "name": "DRDO Summer Internship Programme",
+    "type": "internship",
+    "provider": "Defence Research and Development Organisation (DRDO)",
+    "description": "Internship at DRDO labs across India for engineering and science students. Work on defence technology projects in areas like electronics, aeronautics, materials science, and cyber security. Provides stipend and a certificate of completion.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "3rd or 4th year UG or 1st year PG",
+      "fields": ["Electronics", "Computer Science", "Mechanical", "Aeronautical", "Materials Science", "Physics", "Metallurgy"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-03-31",
+    "award": "INR 10,000-15,000/month stipend",
+    "duration": "2 months",
+    "requirements": ["resume", "ID proof", "NOC from institution", "transcripts"],
+    "benchmarks": {
+      "typical_cgpa": 8.0,
+      "relevant_project_experience": true,
+      "source": "DRDO internship programme guidelines"
+    },
+    "tags": ["research", "defence", "government", "stem", "engineering", "stipend"]
+  },
+  {
+    "id": "isro-internship-2026",
+    "name": "ISRO Student Internship Programme",
+    "type": "internship",
+    "provider": "Indian Space Research Organisation (ISRO)",
+    "description": "Prestigious internship at ISRO centres for students interested in space technology, satellite systems, and aerospace engineering. Work alongside ISRO scientists and engineers on active projects. Highly coveted on a resume.",
+    "eligibility": {
+      "min_cgpa": 8.0,
+      "income_limit": null,
+      "year": "3rd or 4th year UG or PG",
+      "fields": ["Aerospace", "Mechanical", "Electronics", "Computer Science", "Physics", "Mathematics"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-01-31",
+    "award": "INR 10,000-15,000/month stipend",
+    "duration": "2-3 months",
+    "requirements": ["resume", "NOC from institution", "transcripts", "cover letter"],
+    "benchmarks": {
+      "typical_cgpa": 8.5,
+      "relevant_coursework": ["Orbital Mechanics", "Signal Processing", "Control Systems"],
+      "source": "ISRO internship portal statistics"
+    },
+    "tags": ["research", "space", "government", "stem", "engineering", "prestigious", "stipend"]
+  },
+  {
+    "id": "goldman-sachs-engineering-internship-2026",
+    "name": "Goldman Sachs Engineering Summer Analyst",
+    "type": "internship",
+    "provider": "Goldman Sachs",
+    "description": "Highly competitive technology internship at Goldman Sachs for penultimate year engineering students. Work on real financial technology products across divisions. Known for converting to full-time offers. Strong coding skills and aptitude for finance essential.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "3rd year UG (penultimate year)",
+      "fields": ["Computer Science", "Information Technology", "Electronics", "Mathematics", "Statistics"],
+      "nationality": "Any"
+    },
+    "deadline": "2026-09-30",
+    "award": "INR 1,50,000-2,00,000/month stipend",
+    "duration": "10 weeks",
+    "requirements": ["resume", "online assessments", "technical interviews (2-3 rounds)", "HR interview"],
+    "benchmarks": {
+      "typical_cgpa": 8.5,
+      "coding_skills": "LeetCode medium-hard",
+      "leadership_roles": 2,
+      "past_internships": 1,
+      "source": "Goldman Sachs campus recruitment data 2023"
+    },
+    "tags": ["finance-tech", "prestigious", "high-stipend", "coding", "stem", "placement"]
+  },
+  {
+    "id": "google-step-internship-2026",
+    "name": "Google STEP Internship (Student Training in Engineering Program)",
+    "type": "internship",
+    "provider": "Google",
+    "description": "Google's dedicated internship program for first and second year undergraduate CS students, with a focus on increasing diversity in tech. Provides mentorship, real project work, and a strong path to future Google internships. One of the most prestigious early-career programs in tech.",
+    "eligibility": {
+      "min_cgpa": 7.0,
+      "income_limit": null,
+      "year": "1st or 2nd year UG",
+      "fields": ["Computer Science", "Software Engineering", "Information Technology", "Mathematics"],
+      "nationality": "Any",
+      "diversity_focus": "Encourages applications from underrepresented groups"
+    },
+    "deadline": "2026-10-31",
+    "award": "USD 6,000-8,000/month stipend",
+    "duration": "12 weeks",
+    "requirements": ["resume", "coding assessment", "2-3 technical interviews"],
+    "benchmarks": {
+      "typical_cgpa": 8.0,
+      "coding_skills": "LeetCode easy-medium",
+      "projects": 2,
+      "source": "Google STEP program public data"
+    },
+    "tags": ["tech", "prestigious", "diversity", "coding", "stem", "high-stipend", "early-career"]
+  },
+  {
+    "id": "microsoft-explore-internship-2026",
+    "name": "Microsoft Explore Internship",
+    "type": "internship",
+    "provider": "Microsoft",
+    "description": "Microsoft's internship program targeting first and second year students from underrepresented groups. Offers rotation across PM, SWE, and UX roles. Strong emphasis on mentorship and career development. Often leads to repeat internships and full-time offers.",
+    "eligibility": {
+      "min_cgpa": 7.0,
+      "income_limit": null,
+      "year": "1st or 2nd year UG",
+      "fields": ["Computer Science", "Software Engineering", "Information Technology", "HCI"],
+      "nationality": "Any",
+      "diversity_focus": "Underrepresented students in tech"
+    },
+    "deadline": "2026-10-15",
+    "award": "USD 7,000-9,000/month stipend",
+    "duration": "12 weeks",
+    "requirements": ["resume", "online application", "interviews"],
+    "benchmarks": {
+      "typical_cgpa": 7.8,
+      "coding_skills": "LeetCode easy-medium",
+      "source": "Microsoft careers page"
+    },
+    "tags": ["tech", "diversity", "early-career", "high-stipend", "prestigious", "coding"]
+  },
+  {
+    "id": "icici-foundation-scholarship-2026",
+    "name": "ICICI Foundation Scholarship",
+    "type": "scholarship",
+    "provider": "ICICI Foundation for Inclusive Growth",
+    "description": "Merit-cum-means scholarship for undergraduate students pursuing engineering or management degrees. Focus on students from rural areas and first-generation college attendees. Includes mentorship and career support beyond just financial aid.",
+    "eligibility": {
+      "min_cgpa": 7.0,
+      "income_limit": "3LPA",
+      "year": "1st year UG",
+      "fields": ["Engineering", "Management", "Science"],
+      "nationality": "Indian",
+      "preference": "Rural students and first-generation college students"
+    },
+    "deadline": "2026-08-31",
+    "award": "Up to INR 1,50,000/year",
+    "requirements": ["application form", "income certificate", "marksheets", "SOP", "domicile certificate"],
+    "benchmarks": {
+      "typical_cgpa": 7.5,
+      "financial_threshold": "under 3LPA",
+      "first_gen": true,
+      "source": "ICICI Foundation scholarship portal"
+    },
+    "tags": ["need-based", "first-gen", "rural", "merit", "engineering", "management"]
+  },
+  {
+    "id": "narotam-sekhsaria-scholarship-2026",
+    "name": "Narotam Sekhsaria Foundation Scholarship",
+    "type": "scholarship",
+    "provider": "Narotam Sekhsaria Foundation",
+    "description": "Scholarship for postgraduate study in India or abroad at top universities. Provided as an interest-free loan for study abroad or as direct scholarship for Indian PG programs. Focuses on law, social sciences, architecture, and management.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "Final year UG applying to PG",
+      "fields": ["Law", "Social Sciences", "Architecture", "Urban Planning", "Public Policy", "Management", "Arts"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-02-15",
+    "award": "Up to INR 20,00,000 (interest-free loan) or INR 4,00,000/year grant",
+    "requirements": ["SOP", "transcripts", "university offer letter", "recommendation letters", "CV"],
+    "benchmarks": {
+      "typical_cgpa": 8.5,
+      "extracurriculars": 3,
+      "community_service": true,
+      "source": "NSF annual report 2023"
+    },
+    "tags": ["postgraduate", "international", "law", "arts", "social-sciences", "merit"]
+  },
+  {
+    "id": "bharti-airtel-scholarship-2026",
+    "name": "Bharti Airtel Scholarship",
+    "type": "scholarship",
+    "provider": "Bharti Foundation",
+    "description": "Scholarship for meritorious students from underprivileged backgrounds at top engineering colleges. Focuses on enabling students at IITs, NITs, and other top institutions who demonstrate both academic excellence and financial need.",
+    "eligibility": {
+      "min_cgpa": 8.0,
+      "income_limit": "6LPA",
+      "year": "1st year UG at top engineering college",
+      "fields": ["Engineering", "Technology"],
+      "nationality": "Indian",
+      "eligible_institutes": ["IITs", "NITs", "BITS", "Top state engineering colleges"]
+    },
+    "deadline": "2026-09-15",
+    "award": "INR 1,20,000/year",
+    "requirements": ["application form", "income proof", "marksheets", "admission letter"],
+    "benchmarks": {
+      "typical_cgpa": 8.5,
+      "financial_threshold": "under 6LPA",
+      "source": "Bharti Foundation scholarship programme"
+    },
+    "tags": ["need-based", "merit", "engineering", "first-gen", "top-institutes"]
+  },
+  {
+    "id": "fulbright-nehru-fellowship-2026",
+    "name": "Fulbright-Nehru Master's Fellowship",
+    "type": "fellowship",
+    "provider": "US-India Educational Foundation (USIEF)",
+    "description": "Prestigious fellowship for Indian citizens to pursue a Master's degree at a US university. Covers full tuition, living expenses, and travel. Focus on candidates with demonstrated leadership potential and commitment to India's development.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "Postgraduate — Bachelor's completed",
+      "fields": ["any — priority: education, public health, social sciences, STEM, arts"],
+      "nationality": "Indian",
+      "work_experience": "Preferred: 2-3 years"
+    },
+    "deadline": "2026-06-15",
+    "award": "Full tuition + living expenses + travel (USD 30,000-50,000 equivalent)",
+    "requirements": ["SOP", "3 recommendation letters", "transcripts", "English proficiency test", "CV", "personal interview"],
+    "benchmarks": {
+      "typical_cgpa": 8.0,
+      "leadership_roles": 3,
+      "community_service": true,
+      "publications_or_projects": 2,
+      "source": "USIEF Fulbright program data 2023"
+    },
+    "tags": ["international", "prestigious", "us-study", "postgraduate", "leadership", "fellowship"]
+  },
+  {
+    "id": "commonwealth-scholarship-2026",
+    "name": "Commonwealth Scholarship and Fellowship Plan",
+    "type": "scholarship",
+    "provider": "British Council / Commonwealth Scholarship Commission",
+    "description": "Funded by UK government for students from Commonwealth countries to pursue Master's or PhD at UK universities. Covers tuition, living, and travel. Highly competitive with strong emphasis on contribution to home country development.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "Postgraduate (Master's or PhD)",
+      "fields": ["any — preference: development-related fields"],
+      "nationality": "Indian (Commonwealth country)"
+    },
+    "deadline": "2026-12-15",
+    "award": "Full tuition + living allowance + return airfare",
+    "requirements": ["SOP", "2 recommendation letters", "transcripts", "IELTS/TOEFL", "CV", "development impact statement"],
+    "benchmarks": {
+      "typical_cgpa": 8.2,
+      "research_experience": true,
+      "publications": 1,
+      "community_service": true,
+      "source": "Commonwealth Scholarship Commission annual report 2023"
+    },
+    "tags": ["international", "uk-study", "prestigious", "postgraduate", "development", "fellowship"]
+  },
+  {
+    "id": "daad-scholarship-2026",
+    "name": "DAAD Scholarship (Study Scholarships for Indian Students)",
+    "type": "scholarship",
+    "provider": "DAAD (Deutscher Akademischer Austauschdienst)",
+    "description": "German government scholarship for Indian students to pursue Master's or research programs at German universities. Fully funded. Germany has many English-taught programs with no tuition fees, making this an exceptional value opportunity.",
+    "eligibility": {
+      "min_cgpa": 7.0,
+      "income_limit": null,
+      "year": "Final year UG or Bachelor's completed",
+      "fields": ["Engineering", "Natural Sciences", "Architecture", "Planning", "Social Sciences", "Arts"],
+      "nationality": "Indian",
+      "german_language": "Preferred but not always required — English programs available"
+    },
+    "deadline": "2026-11-30",
+    "award": "EUR 861/month + travel + health insurance",
+    "requirements": ["SOP", "2 academic recommendations", "transcripts", "German/English proficiency", "CV", "university acceptance"],
+    "benchmarks": {
+      "typical_cgpa": 7.8,
+      "research_experience": false,
+      "language_skills": "English B2 or German B1",
+      "source": "DAAD India scholarship data 2023"
+    },
+    "tags": ["international", "germany", "postgraduate", "research", "stem", "arts", "affordable"]
+  },
+  {
+    "id": "iitm-iref-internship-2026",
+    "name": "IIT Madras Research Internship (IREF)",
+    "type": "internship",
+    "provider": "IIT Madras",
+    "description": "Summer research fellowship at IIT Madras offering students the opportunity to work with faculty across all departments. Provides stipend and campus accommodation. Strong pathway for students aiming for research careers or IIT graduate admissions.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "2nd or 3rd year UG",
+      "fields": ["Computer Science", "Electrical", "Mechanical", "Civil", "Chemical", "Physics", "Mathematics", "Data Science"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-02-15",
+    "award": "INR 8,000-10,000/month + accommodation",
+    "duration": "2 months (May-July)",
+    "requirements": ["resume", "SOP", "transcripts", "recommendation letter"],
+    "benchmarks": {
+      "typical_cgpa": 8.3,
+      "relevant_projects": 1,
+      "source": "IIT Madras IREF programme page"
+    },
+    "tags": ["research", "stem", "iit", "stipend", "grad-school-prep"]
+  },
+  {
+    "id": "morgan-stanley-internship-2026",
+    "name": "Morgan Stanley Sophomore Internship",
+    "type": "internship",
+    "provider": "Morgan Stanley",
+    "description": "Technology and finance internship for second year students from underrepresented backgrounds. Designed to build early pipelines into financial services technology. Includes structured mentorship and full-time offer consideration.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "2nd year UG",
+      "fields": ["Computer Science", "Information Technology", "Mathematics", "Statistics", "Finance"],
+      "nationality": "Any",
+      "diversity_focus": "Underrepresented groups in finance and technology"
+    },
+    "deadline": "2026-10-31",
+    "award": "INR 1,00,000-1,50,000/month stipend",
+    "duration": "10 weeks",
+    "requirements": ["resume", "online assessment", "2 rounds of interviews"],
+    "benchmarks": {
+      "typical_cgpa": 8.0,
+      "coding_skills": "LeetCode easy-medium",
+      "source": "Morgan Stanley campus programme data"
+    },
+    "tags": ["finance-tech", "diversity", "early-career", "coding", "prestigious"]
+  },
+  {
+    "id": "swaniti-fellowship-2026",
+    "name": "Swaniti Fellowship",
+    "type": "fellowship",
+    "provider": "Swaniti Initiative",
+    "description": "Policy and governance fellowship placing young professionals with Members of Parliament and state government departments across India. Focuses on evidence-based policy work. Ideal for students interested in public policy, governance, and social impact.",
+    "eligibility": {
+      "min_cgpa": 6.5,
+      "income_limit": null,
+      "year": "Final year UG or postgraduate",
+      "fields": ["Public Policy", "Economics", "Social Sciences", "Law", "Engineering", "Data Science"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-01-31",
+    "award": "INR 15,000-25,000/month stipend",
+    "duration": "1 year",
+    "requirements": ["SOP", "writing sample", "CV", "interview"],
+    "benchmarks": {
+      "typical_cgpa": 7.5,
+      "community_service": true,
+      "leadership_roles": 2,
+      "writing_skills": true,
+      "source": "Swaniti Initiative fellowship reports"
+    },
+    "tags": ["policy", "governance", "social-impact", "fellowship", "stipend", "non-stem"]
+  },
+  {
+    "id": "amazon-ml-summer-school-2026",
+    "name": "Amazon ML Summer School",
+    "type": "internship",
+    "provider": "Amazon India",
+    "description": "Intensive ML training program by Amazon scientists and engineers for students interested in machine learning. Not a traditional internship — it's a structured learning program with top performers receiving internship fast-tracks. Highly competitive nationally.",
+    "eligibility": {
+      "min_cgpa": 7.0,
+      "income_limit": null,
+      "year": "3rd or 4th year UG or 1st year PG",
+      "fields": ["Computer Science", "Mathematics", "Statistics", "Data Science", "Electrical Engineering"],
+      "nationality": "Indian"
+    },
+    "deadline": "2026-04-30",
+    "award": "Free (no stipend) — learning program with internship fast-track for top performers",
+    "duration": "4 weeks (online + in-person sessions)",
+    "requirements": ["online application", "ML aptitude test"],
+    "benchmarks": {
+      "typical_cgpa": 8.0,
+      "ml_knowledge": "Linear algebra, probability, basic ML algorithms",
+      "coding_skills": "Python proficient",
+      "source": "Amazon ML Summer School India 2023 cohort data"
+    },
+    "tags": ["machine-learning", "tech", "training", "amazon", "stem", "data-science"]
+  },
+  {
+    "id": "citibank-summer-analyst-2026",
+    "name": "Citibank Summer Analyst Programme",
+    "type": "internship",
+    "provider": "Citibank India",
+    "description": "10-week summer analyst programme across technology, banking, and operations divisions. Students get real project ownership and exposure to global banking operations. Strong conversion rate to pre-placement offers.",
+    "eligibility": {
+      "min_cgpa": 7.5,
+      "income_limit": null,
+      "year": "3rd year UG (penultimate year)",
+      "fields": ["Computer Science", "Engineering", "Economics", "Commerce", "Finance", "Mathematics"],
+      "nationality": "Any"
+    },
+    "deadline": "2026-09-15",
+    "award": "INR 80,000-1,00,000/month stipend",
+    "duration": "10 weeks",
+    "requirements": ["resume", "online assessment", "2-3 rounds of interviews"],
+    "benchmarks": {
+      "typical_cgpa": 8.0,
+      "leadership_roles": 1,
+      "extracurriculars": 2,
+      "source": "Citibank campus recruitment data 2023"
+    },
+    "tags": ["finance", "banking", "tech", "placement", "stipend"]
+  }
+]

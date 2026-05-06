@@ -5,7 +5,7 @@ const navItems = [
   { label: "Studio", to: "/opportunities" },
   { label: "About", to: "/intake" },
   { label: "Journal", to: "/tracker" },
-  { label: "Reach Us", to: "/intake" },
+  { label: "Reach Us", to: "/tracker" },
 ];
 
 export default function Hero() {

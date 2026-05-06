@@ -4,6 +4,7 @@ from fastapi.responses import StreamingResponse
 from models import *
 from database import supabase
 from dotenv import load_dotenv
+from datetime import datetime
 import anthropic
 import PyPDF2
 import json
@@ -46,10 +47,10 @@ def get_opportunity_by_id(opportunity_id: str):
             return opp
     return None
 
-def call_claude(prompt: str, system: str = "") -> str:
+def call_claude(prompt: str, system: str = "", max_tokens: int = 2000) -> str:
     message = client.messages.create(
         model="claude-sonnet-4-20250514",
-        max_tokens=1000,
+        max_tokens=max_tokens,
         system=system if system else "You are a helpful assistant. Always respond in valid JSON unless told otherwise.",
         messages=[{"role": "user", "content": prompt}]
     )
@@ -93,17 +94,20 @@ async def extract_profile(
 
     result = call_claude(prompt)
     profile = json.loads(result)
-    supabase.table("users").insert({
-        "name": name,
-        "college": college,
-        "cgpa": cgpa,
-        "field": field,
-        "financial_background": financial_background,
-        "skills": profile.get("skills", []),
-        "achievements": profile.get("achievements", []),
-        "experience": profile.get("experience", []),
-        "resume_text": resume_text
-    }).execute()
+    try:
+        supabase.table("users").insert({
+            "name": name,
+            "college": college,
+            "cgpa": cgpa,
+            "field": field,
+            "financial_background": financial_background,
+            "skills": profile.get("skills", []),
+            "achievements": profile.get("achievements", []),
+            "experience": profile.get("experience", []),
+            "resume_text": resume_text
+        }).execute()
+    except Exception as e:
+        print(f"Supabase insert failed (non-fatal): {e}")
     profile["resume_text"] = resume_text
     return profile
 
@@ -112,7 +116,7 @@ async def extract_profile(
 def match_opportunities(profile: UserProfile):
     from prompts import OPPORTUNITY_MATCHING_PROMPT
     prompt = OPPORTUNITY_MATCHING_PROMPT.format(
-        profile=json.dumps(profile.dict()),
+        profile=json.dumps(profile.model_dump()),
         opportunities=json.dumps(OPPORTUNITIES)
     )
     result = call_claude(prompt)
@@ -127,7 +131,7 @@ def analyse_gaps(request: GapAnalysisRequest):
 
     from prompts import GAP_ANALYSIS_PROMPT
     prompt = GAP_ANALYSIS_PROMPT.format(
-        profile=json.dumps(request.profile.dict()),
+        profile=json.dumps(request.profile.model_dump()),
         opportunity=json.dumps(opportunity)
     )
     result = call_claude(prompt)
@@ -135,15 +139,17 @@ def analyse_gaps(request: GapAnalysisRequest):
 
 
 @app.post("/action-plan")
-def action_plan(request: GapAnalysisRequest):
+def action_plan(request: ActionPlanRequest):
     opportunity = get_opportunity_by_id(request.opportunity_id)
     if not opportunity:
         return {"error": "Opportunity not found"}
 
     from prompts import ACTION_PLAN_PROMPT
     prompt = ACTION_PLAN_PROMPT.format(
-        profile=json.dumps(request.profile.dict()),
-        opportunity=json.dumps(opportunity)
+        profile=json.dumps(request.profile.model_dump()),
+        opportunity=json.dumps(opportunity),
+        gaps=json.dumps(request.gaps),
+        current_date=datetime.now().strftime("%B %d, %Y")
     )
     result = call_claude(prompt)
     return json.loads(result)
@@ -157,7 +163,7 @@ def draft_application(request: DraftRequest):
 
     from prompts import APPLICATION_DRAFT_PROMPT
     prompt = APPLICATION_DRAFT_PROMPT.format(
-        profile=json.dumps(request.profile.dict()),
+        profile=json.dumps(request.profile.model_dump()),
         opportunity=json.dumps(opportunity),
         essay_prompt=request.essay_prompt
     )
@@ -174,14 +180,14 @@ def draft_recommendation(request: RecommendationRequest):
     from prompts import RECOMMENDATION_REQUEST_PROMPT, RECOMMENDATION_LETTER_PROMPT
 
     request_prompt = RECOMMENDATION_REQUEST_PROMPT.format(
-        profile=json.dumps(request.profile.dict()),
+        profile=json.dumps(request.profile.model_dump()),
         opportunity=json.dumps(opportunity),
         recommender_type=request.recommender_type,
         relationship_context=request.relationship_context
     )
 
     letter_prompt = RECOMMENDATION_LETTER_PROMPT.format(
-        profile=json.dumps(request.profile.dict()),
+        profile=json.dumps(request.profile.model_dump()),
         opportunity=json.dumps(opportunity),
         recommender_type=request.recommender_type
     )
@@ -215,4 +221,35 @@ def update_tracker(update: TrackerUpdate):
 def get_tracker(user_id: str):
     result = supabase.table("applications").select("*").eq("user_id", user_id).execute()
     return result.data
+
+
+@app.post("/refine")
+def refine_draft(request: RefineRequest):
+    prompt = (
+        f"Refine the following application draft based on this feedback.\n\n"
+        f"Feedback: {request.refinement}\n\n"
+        f"Original draft:\n{request.draft}\n\n"
+        f"Return only the improved draft as plain text. No explanations."
+    )
+    result = call_claude(prompt, system="You are an expert application essay editor.", max_tokens=3000)
+    return {"draft": result}
+
+
+# ─── ROUTE ALIASES (frontend-facing names) ────────────────
+
+@app.post("/match")
+def match_alias(profile: UserProfile):
+    return match_opportunities(profile)
+
+@app.post("/gap-analysis")
+def gap_alias(request: GapAnalysisRequest):
+    return analyse_gaps(request)
+
+@app.post("/draft")
+def draft_alias(request: DraftRequest):
+    return draft_application(request)
+
+@app.post("/rec-letter")
+def rec_alias(request: RecommendationRequest):
+    return draft_recommendation(request)
 

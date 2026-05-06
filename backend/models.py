@@ -31,6 +31,16 @@ class RecommendationRequest(BaseModel):
     recommender_type: str
     relationship_context: str
 
+class ActionPlanRequest(BaseModel):
+    profile: UserProfile
+    opportunity_id: str
+    gaps: Optional[List[dict]] = []
+
+class RefineRequest(BaseModel):
+    draft: str
+    refinement: str
+    opportunity_id: Optional[str] = ""
+
 class TrackerUpdate(BaseModel):
     user_id: str
     opportunity_id: str

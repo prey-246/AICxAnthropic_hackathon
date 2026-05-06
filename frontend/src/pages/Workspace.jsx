@@ -20,16 +20,16 @@ const getStoredJSON = (key, fallback) => {
 
 const highlightBlanks = (text) => {
   return String(text || "")
-    .split(/(\[BLANKS\])/g)
-    .map((part, index) =>
-      part === "[BLANKS]" ? (
-        <span key={`${part}-${index}`} className="blank-highlight">
-          {part}
-        </span>
-      ) : (
-        <span key={`${part}-${index}`}>{part}</span>
-      )
-    );
+    .split(/(\[NEEDS YOUR INPUT[^\]]*\]|\[PROFESSOR TO ADD[^\]]*\])/g)
+    .map((part, index) => {
+      if (part.startsWith("[NEEDS YOUR INPUT")) {
+        return <span key={index} className="blank-highlight blank-user">{part}</span>;
+      }
+      if (part.startsWith("[PROFESSOR TO ADD")) {
+        return <span key={index} className="blank-highlight blank-prof">{part}</span>;
+      }
+      return <span key={index}>{part}</span>;
+    });
 };
 
 export default function Workspace() {
@@ -76,8 +76,8 @@ export default function Workspace() {
       setTabError("");
       try {
         const payload = {
-          userId: userProfile?.id || userProfile?.userId || userProfile?.email || userProfile?.name || "local-user",
-          opportunityId
+          profile: userProfile,
+          opportunity_id: opportunityId
         };
         const response = await client.post("/gap-analysis", payload);
         const result = response.data || {};
@@ -103,8 +103,9 @@ export default function Workspace() {
       try {
         const gap = getStoredJSON(`gapAnalysis_${opportunityId}`, gapData || {});
         const response = await client.post("/action-plan", {
-          opportunityId,
-          gapAnalysis: gap
+          profile: userProfile,
+          opportunity_id: opportunityId,
+          gaps: gap?.gaps || []
         });
         const tasks = response.data?.tasks || response.data || [];
         const saved = getStoredJSON(`actionPlan_${opportunityId}`, []);
@@ -134,9 +135,9 @@ export default function Workspace() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          opportunityId,
-          userProfile,
-          selectedOpportunity
+          profile: userProfile,
+          opportunity_id: opportunityId,
+          essay_prompt: selectedOpportunity?.essay_prompt || ""
         })
       });
       if (!response.ok || !response.body) {
@@ -164,11 +165,11 @@ export default function Workspace() {
     setTabError("");
     try {
       const response = await client.post("/refine", {
-        opportunityId,
         draft: draftText,
-        refinement: refineInput
+        refinement: refineInput,
+        opportunity_id: opportunityId
       });
-      setDraftText(response.data?.draft || response.data?.text || draftText);
+      setDraftText(response.data?.draft || draftText);
     } catch (err) {
       setTabError(err.response?.data?.detail || "Failed to refine draft.");
     } finally {
@@ -181,11 +182,10 @@ export default function Workspace() {
     setTabError("");
     try {
       const response = await client.post("/rec-letter", {
-        opportunityId,
+        profile: userProfile,
+        opportunity_id: opportunityId,
         recommender_type: recommenderType,
-        relationship_context: relationshipContext,
-        userProfile,
-        selectedOpportunity
+        relationship_context: relationshipContext
       });
       setRequestEmail(response.data?.request_email || response.data?.email || "");
       setRecLetter(response.data?.recommendation_letter || response.data?.letter || "");
